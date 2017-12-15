@@ -2,7 +2,7 @@
 :-dynamic(course/4).
 
 % load the course records from a file
-load_course:- consult('fall16sched.pl'), tell('fall16sched.pl.bak'), listing(course), told.
+load_course:- consult('schedule.pl'), tell('schedule.pl.bak'), listing(course), told.
 
 % list students
 list_course :- listing(course).
@@ -14,7 +14,7 @@ add_course(Name,Location,Time,Instructor) :- assert(course(Name,Location,Time,In
 delete_course(Name,Location,Time,Instructor) :- retract(course(Name,Location,Time,Instructor)), write(' deleted.').
 
 % save modified records in place of old ones.
-save_course:- tell('fall16sched.pl'), listing(course), told.
+save_course:- tell('schedule.pl'), listing(course), told.
 
 %identifys teacher and classes taught
 is_teaching(LastName,Period):-	course(_,_,Period,instructor(LastName)).
