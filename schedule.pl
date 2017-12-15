@@ -1,5 +1,5 @@
 %identifys 4 pieces input
-:-dynamic(fall16sched/4).
+:-dynamic(schedule/4).
 
 %list of courses
 course(cosc455,
